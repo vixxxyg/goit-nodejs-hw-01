@@ -1,10 +1,5 @@
 const contactsOperations = require("./contacts");
 
-// const yargs = require("yargs");
-// const { hideBin } = require("yargs/helpers");
-// const arr = hideBin(process.argv);
-// const { argv } = yargs(arr);
-
 const { program } = require("commander");
 
 program

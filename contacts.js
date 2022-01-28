@@ -2,7 +2,6 @@ const fs = require("fs/promises");
 const path = require("path");
 const { v4 } = require("uuid");
 
-// const filePath = `${__dirname}\contacts.json`;
 const contactsPath = path.join("db/contacts.json");
 
 const listContacts = async () => {
@@ -23,6 +22,11 @@ const getContactById = async (id) => {
 };
 
 const addContact = async (name, email, phone) => {
+  if (!name || !email || !phone) {
+    console.log("Name, email and phone are required!");
+    return null;
+  }
+
   const data = { id: v4(), name, email, phone };
   const contacts = await listContacts();
   contacts.push(data);
